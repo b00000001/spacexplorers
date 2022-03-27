@@ -1,65 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-*{ 
-    padding: 0;    
-    margin: 0;
-    height: 100%;
-
-    font-family: Arial, Helvetica, sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .container {
-    display: grid; 
-    grid-template-columns: 1fr; 
-    grid-template-rows: 1fr 8fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "containerHeader"
-      "containerBody"
-      "containerFooter" 
-  }
-  .main {      
-    height: 100%;
-    border: 2px solid red;
-  }
-  .userForm {
-      height: auto;
-  }
-  /* Header */
-  .navbar {
-      display: flex;
-      justify-content: space-between;
-      color: white;
-      background-color: #596eda;
-  }
-  .navbarMid {
-      font-family: Poppins;
-      font-size: 2rem;
-      color: white;
-    }
-    .letterE {
-        color: rgba(255, 0, 0, 0.644);
-    }
-  .navbarLeft {
-      display: flex;
-      color: white;
-      justify-content: space-evenly
-  }
-  /* Body */
-  .containerBody {
-    background-color: #596eda;
-    flex-direction: column;  
-    height: 100%;  
-    
-    display: flex; 
-  }
-  .timeDiv {
-      color: white;
-  }
-  .infoDiv {
-      display: flex;
-      flex-direction: column;
-  }
-  /* Footer */
-  .containerFooter {
-    background-color: #596eda;    
-    height: 100%;
-  }
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 8fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    'containerHeader'
+    'containerBody'
+    'containerFooter';
+}
+.timeDiv {
+  height: auto;
+}
+/* Header */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #596eda;
+}
+.navbarMid {
+  font-family: Poppins;
+  font-size: 2rem;
+}
+.letterE {
+  color: rgba(255, 0, 0, 0.644);
+}
+.navbarLeft {
+  display: flex;
+  justify-content: space-evenly;
+}
+/* Body */
+.containerBody {
+  background-color: #596eda;
+  flex-direction: column;
+  display: flex;
+}
+.infoDiv {
+  display: flex;
+  flex-direction: column;
+}
+.infoDivTop {
+  border: 2px solid blue;
+}
+.infoDivTop > p {
+  height: auto;
+}
+.userNameForm {
+  display: none;
+  height: auto;
+}
+.userNameInput {
+  color: black;
+}
+.userNameSubmitBtn {
+  background-color: #596eda;
+  border: 2ps solid white;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+/* Footer */
+.containerFooter {
+  background-color: #596eda;
+}
