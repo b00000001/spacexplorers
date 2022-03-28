@@ -16,21 +16,33 @@
     'containerBody'
     'containerFooter';
 }
+.containerBodyGrid {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: 'containerBodyGridLeft containerBodyGridMid containerBodyGridRight';
+}
 .timeDiv {
   height: auto;
 }
 /* Header */
+.containerHeader {
+  height: 100%;
+  background-color: #031926;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
-  background-color: #596eda;
+  background-color: #031926;
+  height: 100%;
 }
 .navbarMid {
   font-family: Poppins;
   font-size: 2rem;
 }
 .letterE {
-  color: rgba(255, 0, 0, 0.644);
+  color: rgba(255, 0, 0);
 }
 .navbarLeft {
   display: flex;
@@ -38,18 +50,12 @@
 }
 /* Body */
 .containerBody {
-  background-color: #596eda;
+  background-color: #031926;
   flex-direction: column;
   display: flex;
 }
-.infoDiv {
-  display: flex;
-  flex-direction: column;
-}
-.infoDivTop {
-  border: 2px solid blue;
-}
-.infoDivTop > p {
+
+.currentTime {
   height: auto;
 }
 .userNameForm {
@@ -60,7 +66,39 @@
   color: black;
 }
 .userNameSubmitBtn {
-  background-color: #596eda;
+  background-color: #031926;
+  border: 2ps solid white;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.infoDiv {
+  height: auto;
+}
+.infoDivBottom {
+  height: auto;
+}
+/* Inner Body Container */
+.containerBody {
+  height: 100%;
+  display: flex;
+}
+.containerBodyLeft {
+  width: 100%;
+}
+.containerBodyRight {
+  height: 100%;
+}
+.resourceInfo {
+  height: auto;
+}
+.gameButtons > button {
+  background-color: #031926;
   border: 2ps solid white;
   color: white;
   padding: 10px 20px;
@@ -73,5 +111,5 @@
 }
 /* Footer */
 .containerFooter {
-  background-color: #596eda;
+  background-color: #031926;
 }

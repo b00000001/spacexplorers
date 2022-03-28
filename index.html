@@ -25,23 +25,44 @@
         </div>
 
         <div class="containerBody">
-            <div class="timeDiv">
-                <h3 class="currentTime"></h3>
-            </div>
-            <div class="infoDiv">
-                <div class="infoDivTop">
-                    <form class='userNameForm' action="submit">
-                        <input type="text" name="userName" class="userNameInput" id="">
-                        <input type="submit" class='userNameSubmitBtn' value="Submit">
-                    </form>
+            <div class="containerBodyGrid">
+
+                <div class="containerBodyLeft">
+                    <div class="resourceInfo">
+                        <h3>Resources</h3>
+                        <p class="resourceAmt"> 0</p>
+                    </div>
                 </div>
+
+                <div class="containerBodyMid">
+                    <div class="infoDiv">
+                        <div class="infoDivTop">
+                            <form class='userNameForm' onsubmit="getUserName()">
+                                <input type="text" name="userName" class="userNameInput" id="">
+                                <input type="submit" class='userNameSubmitBtn' value="Submit">
+                            </form>
+                            <div class="gameButtons">
+                                <button class="resourceGeneratorButton">Click</button>
+                            </div>
+                        </div>
+                        <div class="infoDivBottom">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="containerBodyRight">
+                    <div class="timeDiv">
+                        <h3 class="currentTime"></h3>
+                    </div>
+                </div>
+
             </div>
         </div>
 
         <div class="containerFooter">Footer</div>
-    </div>
 
-    <script src="./js/main.js"></script>
+        <script src="./js/main.js"></script>
 </body>
 
 </html>
