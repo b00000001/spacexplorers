@@ -9,20 +9,20 @@ const resourceGeneratorButton = document.querySelector(
 );
 
 (() => {
+  let resourcesInterval;
   setInterval(() => {
     currentTime.innerHTML = new Date().toLocaleTimeString();
   }, 1000);
 
   resourceGeneratorButton.addEventListener('click', () => {
     userData.resources += userData.resourcesPerClick;
+
     if (userData.mining) {
       userData.mining = false;
+      clearInterval(resourcesInterval);
     } else {
       userData.mining = true;
-    }
-    if (userData.mining) {
-      setInterval(updateResources, 1000);
-      console.log(userData);
+      resourcesInterval = setInterval(updateResources, 1000);
     }
   });
   const getUserName = () => {
