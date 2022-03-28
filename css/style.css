@@ -97,6 +97,9 @@
 .resourceInfo {
   height: auto;
 }
+.gameButtons {
+  width: 30%;
+}
 .gameButtons > button {
   background-color: #031926;
   border: 2ps solid white;
