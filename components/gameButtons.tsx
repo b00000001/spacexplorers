@@ -2,7 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { userData } from './userData';
 import React, { useState, useContext } from 'react';
 
-const GameButtons = () => {
+const GameButtons = (props) => {
+  let {handleClick} = props.userData
    
   return (
     <div className="gameButtons w-auto h-full">
