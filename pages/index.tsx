@@ -12,12 +12,12 @@ const Home: NextPage = (props) => {
       <div className="row-span-4">
         <div className="grid grid-cols-8 grid-rows-1 h-full">
           <div>
-            <Resources userData={props} />
+            <Resources resources={props} />
           </div>
           <div className="col-span-6 text-2xl flex justify-start flex-col">
             Main
             <div className="py-2 h-1/4 w-1/2">
-              <GameButtons userData={props} />
+              <GameButtons resources={props} handleClick={props} />
             </div>
           </div>
           <div className="">
