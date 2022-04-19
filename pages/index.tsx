@@ -17,7 +17,7 @@ const Home: NextPage = (props) => {
           <div className="col-span-6 text-2xl flex justify-start flex-col">
             Main
             <div className="py-2 h-1/4 w-1/2">
-              <GameButtons resources={props} handleClick={props} />
+              <GameButtons resourcesState={props} startResourceSystem={props} />
             </div>
           </div>
           <div className="">

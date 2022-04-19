@@ -1,13 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { userData } from './userData';
-import React, { useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const GameButtons = (props) => {
-  let {handleClick} = props.handleClick   
+  let { startResourceSystem } = props.startResourceSystem;
+  let { mining } = props.resourcesState.resourcesState;
   return (
     <div className="gameButtons w-auto h-full">
-      <button className="btn" onClick={() => handleClick()}>
-        Add Resources
+      <button className="btn" onClick={() => startResourceSystem()}>
+        {mining ? 'Stop Mining' : 'Start Mining'}
       </button>
       <button className="btn">Click</button>
       <button className="btn">Click</button>
