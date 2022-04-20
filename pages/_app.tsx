@@ -5,6 +5,7 @@ import type { AppProps } from 'next/app';
 function MyApp({ Component, pageProps }: AppProps) {
   const [resourcesState, setResourcesState] = useState({
     resources: 0,
+    resourcesPerTick: 1,
     mining: false
   });
 
@@ -14,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       resourcesInterval = setInterval(() => {
         setResourcesState({
           ...resourcesState,
-          resources: resourcesState.resources + 1
+          resources: resourcesState.resources + resourcesState.resourcesPerTick
         });
       }, 1000);
     } else {
@@ -26,11 +27,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   const startResourceSystem = () => {
     if (resourcesState.mining) {
       setResourcesState({
+        ...resourcesState,
         resources: resourcesState.resources,
         mining: false
       });
     } else {
       setResourcesState({
+        ...resourcesState,
         resources: resourcesState.resources,
         mining: true
       });

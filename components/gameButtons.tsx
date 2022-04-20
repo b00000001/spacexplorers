@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { userData } from './userData';
 import React, { useEffect, useState } from 'react';
 
 const GameButtons = (props) => {
