@@ -10,7 +10,7 @@ const CurrentTime = () => {
     return () => clearInterval(interval);
   }, []);
 
-  return <div className="text-gray-300">{time}</div>;
+  return <div className="text-gray-300 text-xl">{time}</div>;
 };
 
 export default CurrentTime;

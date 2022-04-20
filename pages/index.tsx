@@ -5,7 +5,7 @@ import GameButtons from '../components/gameButtons';
 import Resources from '../components/resourceDisplay';
 const Home: NextPage = (props) => {
   return (
-    <div className="text-gray-300 bg-blue-900 grid grid-cols-1 grid-rows-6 h-screen">
+    <div className="text-gray-300 bg-gray-900 grid grid-cols-1 grid-rows-6 h-screen">
       <div className="h-100">
         <Header />
       </div>
