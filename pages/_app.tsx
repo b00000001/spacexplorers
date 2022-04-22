@@ -43,6 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <Component
       {...pageProps}
       resourcesState={resourcesState}
+      setResourcesState={setResourcesState}
       startResourceSystem={startResourceSystem}
     />
   );
