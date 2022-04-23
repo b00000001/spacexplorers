@@ -1,11 +1,18 @@
 import GameButtons from './gameButtons';
 const Main = (props) => {
-    return (
-        <div>
-            <div>Main</div>
-        <GameButtons resources={props}/>
-        </div>
-    )
-}
+  let { resourcesState } = props;
+  let { setResourcesState } = props;
+  let { startResourceSystem } = props;
+  return (
+    <>
+      <div>Main</div>
+      <GameButtons
+        resourcesState={resourcesState}
+        setResourcesState={setResourcesState}
+        startResourceSystem={startResourceSystem}
+      />
+    </>
+  );
+};
 
 export default Main;
