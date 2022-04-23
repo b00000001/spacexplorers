@@ -1,3 +1,5 @@
-export const userData = {
-  resources: 0
+export const userInfo = {
+  resources: 0,
+  resourcesPerTick: 1,
+  mining: false
 };

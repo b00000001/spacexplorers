@@ -1,14 +1,14 @@
 import GameButtons from './gameButtons';
 const Main = (props) => {
-  let { resourcesState } = props;
-  let { setResourcesState } = props;
+  let { userData } = props;
+  let { setUserData } = props;
   let { startResourceSystem } = props;
   return (
     <>
       <div>Main</div>
       <GameButtons
-        resourcesState={resourcesState}
-        setResourcesState={setResourcesState}
+        userData={userData}
+        setUserData={setUserData}
         startResourceSystem={startResourceSystem}
       />
     </>
