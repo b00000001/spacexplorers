@@ -4,7 +4,8 @@ const GameButtons = (props) => {
   let { userData, setUserData, startResourceSystem } = props;
   return (
     <>
-      <div className="gameButtons w-auto h-full flex">
+      <div className="gameButtons w-auto h-full flex flex-col">
+        Welcome {userData.userName}!
         <div>
           <button
             className="btn"
