@@ -3,6 +3,7 @@ import CurrentTime from '../components/currentTime';
 import Header from '../components/header';
 import GameButtons from '../components/gameButtons';
 import Resources from '../components/resourceDisplay';
+import Main from '../components/main';
 const Home: NextPage = (props) => {
   return (
     <div className="text-gray-300 bg-gray-900 grid grid-cols-1 grid-rows-6 h-screen">
@@ -15,9 +16,9 @@ const Home: NextPage = (props) => {
             <Resources resources={props} />
           </div>
           <div className="col-span-6 text-2xl flex justify-start flex-col">
-            Main
             <div className="py-2 h-1/4 w-1/2">
-              <GameButtons resourcesState={props} setResourcesState={props} />
+            <Main resources={props}/>
+              
             </div>
           </div>
           <div className="">
