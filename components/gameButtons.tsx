@@ -19,15 +19,14 @@ const GameButtons = (props) => {
             Increase Resources
           </button>
         </div>
-        <div className="px-2">
+        <div>
           {userData.resources > 10 && (
             <button className="btn" onClick={() => startResourceSystem()}>
-              Install AI Miner
+              {userData.mining ? 'Pause AI Miner' : 'Install AI Miner'}
             </button>
           )}
         </div>
       </div>
-      <div className=""></div>
     </>
   );
 };

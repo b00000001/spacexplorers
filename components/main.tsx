@@ -11,7 +11,7 @@ const Main = (props) => {
     localStorage.setItem('userData', JSON.stringify(userData));
     setSaveState(true);
     setTimeout(() => {
-        setSaveState(false);
+      setSaveState(false);
     }, 3000);
   };
   if (userData.userName === '') {
@@ -42,7 +42,6 @@ const Main = (props) => {
             </div>
           </div>
         )}
-        <input type="text" placeholder='test' value='Test' />
         <GameButtons
           userData={userData}
           setUserData={setUserData}
