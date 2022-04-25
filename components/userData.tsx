@@ -3,7 +3,10 @@ export const userInfo = {
     resources: 0,
     resourcesPerTick: 1
   },
-  mining: false,
+  mining: {
+    aiMiningUnlocked: false,
+    aiMiners: 0
+  },
   userName: ''
 };
 
@@ -24,6 +27,7 @@ export class Resources {
       }
     });
   };
+
   displayProps = () => {
     console.log(this.userData);
   };

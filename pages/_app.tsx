@@ -8,31 +8,41 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     let resourcesInterval;
-    if (userData.mining) {
+    if (userData.mining.aiMiningUnlocked) {
       resourcesInterval = setInterval(() => {
         setUserData({
           ...userData,
-          resources: userData.resources + userData.resourcesPerTick
+          resources: {
+            ...userData.resources,
+            resources:
+              userData.resources.resources + userData.resources.resourcesPerTick
+          }
         });
       }, 1000);
     } else {
       clearInterval(resourcesInterval);
     }
     return () => clearInterval(resourcesInterval);
-  }, [userData.mining, userData.resources]);
+  }, [userData.mining.aiMiningUnlocked, userData.resources.resources]);
 
   const startResourceSystem = () => {
-    if (userData.mining) {
+    if (userData.mining.aiMiningUnlocked) {
       setUserData({
         ...userData,
         resources: userData.resources,
-        mining: false
+        mining: {
+          ...userData.mining,
+          aiMiningUnlocked: false
+        }
       });
     } else {
       setUserData({
         ...userData,
         resources: userData.resources,
-        mining: true
+        mining: {
+          ...userData.mining,
+          aiMiningUnlocked: true
+        }
       });
     }
   };
