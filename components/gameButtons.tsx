@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Resources} from './userData';
+import { Resources } from './userData';
 
 const GameButtons = (props) => {
   let { userData, setUserData, startResourceSystem } = props;
@@ -12,22 +12,20 @@ const GameButtons = (props) => {
         <div>
           <button
             className="btn"
-            onClick={() =>
-              playerResources.increaseResources()
-              }
+            onClick={() => playerResources.increaseResources()}
           >
             Increase Resources
           </button>
         </div>
         <div>
-          {userData.resources >= 10 && (
+          {userData.resources.resources >= 10 && (
             <button className="btn" onClick={() => startResourceSystem()}>
               {userData.mining ? 'Pause AI Miner' : 'Install AI Miner'}
             </button>
           )}
         </div>
         <div>
-          {userData.resources >= 30 && (
+          {userData.resources.resources >= 30 && (
             <button className="btn" onClick={() => startResourceSystem()}>
               Install Additional Miner
             </button>
