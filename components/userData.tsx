@@ -1,15 +1,17 @@
 export const userInfo = {
   userName: '',
-    resources: {
+  resources: {
     minerals: {
       amount: 0,
-      mineralsPerTick: 1
-    }
+      mineralsPerTick: parseFloat('0.001')
+    },
+    technologh: {}, //
+    military: {}
   },
   mining: {
     aiMiningUnlocked: false,
     aiMiners: 0
-  },
+  }
 };
 
 export class Resources {
@@ -27,6 +29,15 @@ export class Resources {
           ...this.userData.resources.minerals,
           amount: amount + this.userData.resources.minerals.mineralsPerTick
         }
+      }
+    });
+  };
+  additionalMiner = () => {
+    this.setUserState({
+      ...this.userData,
+      mining: {
+        ...this.userData.mining,
+        aiMiners: this.userData.mining.aiMiners++
       }
     });
   };

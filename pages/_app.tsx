@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import { userInfo } from '../components/userData';
-
+import { Resources, userInfo } from '../components/userData';
 function MyApp({ Component, pageProps }: AppProps) {
   const [userData, setUserData] = useState(userInfo);
+  let playerResources = new Resources(userData, setUserData);
 
   useEffect(() => {
     let resourcesInterval;
@@ -18,16 +18,17 @@ function MyApp({ Component, pageProps }: AppProps) {
               ...userData.resources.minerals,
               amount:
                 userData.resources.minerals.amount +
-                userData.resources.minerals.mineralsPerTick
+                userData.resources.minerals.mineralsPerTick *
+                  userData.mining.aiMiners
             }
           }
         });
-      }, 1000);
+      }, 500);
     } else {
       clearInterval(resourcesInterval);
     }
     return () => clearInterval(resourcesInterval);
-  }, [userData.mining.aiMiningUnlocked, userData.resources.resources]);
+  }, [userData.mining.aiMiningUnlocked, userData.resources.minerals.amount]);
 
   const startResourceSystem = () => {
     if (userData.mining.aiMiningUnlocked) {

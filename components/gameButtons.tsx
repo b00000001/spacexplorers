@@ -4,7 +4,6 @@ import { Resources } from './userData';
 const GameButtons = (props) => {
   let { userData, setUserData, startResourceSystem } = props;
   let playerResources = new Resources(userData, setUserData);
-  playerResources.displayProps();
   return (
     <>
       <div className="gameButtons w-auto h-full flex flex-col">
@@ -18,15 +17,20 @@ const GameButtons = (props) => {
           </button>
         </div>
         <div>
-          {userData.resources.minerals.amount >= 10 && (
+          {userData.resources.minerals.amount >= 0.01 && (
             <button className="btn" onClick={() => startResourceSystem()}>
-              {userData.mining.aiMiningUnlocked ? 'Pause AI Miner' : 'Install AI Miner'}
+              {userData.mining.aiMiningUnlocked
+                ? 'Pause AI Miner'
+                : 'Install AI Miner'}
             </button>
           )}
         </div>
         <div>
-          {userData.resources.minerals.amount >= 30 && (
-            <button className="btn" onClick={() => startResourceSystem()}>
+          {userData.resources.minerals.amount >= 0.2 && (
+            <button
+              className="btn"
+              onClick={() => playerResources.additionalMiner()}
+            >
               Install Additional Miner
             </button>
           )}
