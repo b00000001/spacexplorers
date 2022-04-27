@@ -1,13 +1,15 @@
 export const userInfo = {
-  resources: {
-    resources: 0,
-    resourcesPerTick: 1
+  userName: '',
+    resources: {
+    minerals: {
+      amount: 0,
+      mineralsPerTick: 1
+    }
   },
   mining: {
     aiMiningUnlocked: false,
     aiMiners: 0
   },
-  userName: ''
 };
 
 export class Resources {
@@ -16,18 +18,18 @@ export class Resources {
     this.setUserState = setUserState;
   }
   increaseResources = () => {
-    let { resources } = this.userData.resources;
+    let { amount } = this.userData.resources.minerals;
     this.setUserState({
       ...this.userData,
       resources: {
         ...this.userData.resources,
-        resources:
-          this.userData.resources.resources +
-          this.userData.resources.resourcesPerTick
+        minerals: {
+          ...this.userData.resources.minerals,
+          amount: amount + this.userData.resources.minerals.mineralsPerTick
+        }
       }
     });
   };
-
   displayProps = () => {
     console.log(this.userData);
   };

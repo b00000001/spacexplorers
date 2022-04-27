@@ -14,8 +14,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           ...userData,
           resources: {
             ...userData.resources,
-            resources:
-              userData.resources.resources + userData.resources.resourcesPerTick
+            minerals: {
+              ...userData.resources.minerals,
+              amount:
+                userData.resources.minerals.amount +
+                userData.resources.minerals.mineralsPerTick
+            }
           }
         });
       }, 1000);

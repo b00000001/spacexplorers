@@ -18,14 +18,14 @@ const GameButtons = (props) => {
           </button>
         </div>
         <div>
-          {userData.resources.resources >= 10 && (
+          {userData.resources.minerals.amount >= 10 && (
             <button className="btn" onClick={() => startResourceSystem()}>
-              {userData.mining ? 'Pause AI Miner' : 'Install AI Miner'}
+              {userData.mining.aiMiningUnlocked ? 'Pause AI Miner' : 'Install AI Miner'}
             </button>
           )}
         </div>
         <div>
-          {userData.resources.resources >= 30 && (
+          {userData.resources.minerals.amount >= 30 && (
             <button className="btn" onClick={() => startResourceSystem()}>
               Install Additional Miner
             </button>

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 
 const Resources = (props) => {
-  let { resources } = props.userData.resources;
+  let { amount } = props.userData.resources.minerals;
   return (
     <div>
       <div className="text-2xl">Resources</div>
-      <div className="text-2xl">{resources}</div>
+      <div className="text-2xl">{amount}</div>
     </div>
   );
 };
