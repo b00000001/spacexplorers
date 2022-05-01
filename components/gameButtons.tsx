@@ -4,6 +4,7 @@ import { Resources } from './userData';
 const GameButtons = (props) => {
   let { userData, setUserData, startResourceSystem } = props;
   let playerResources = new Resources(userData, setUserData);
+  playerResources.printMessage('Joker');
   return (
     <>
       <div className="gameButtons w-auto h-full flex flex-col">

@@ -13,9 +13,18 @@ export const userInfo = {
     aiMiners: 0
   }
 };
+class CalculateResources { 
+  costructor(name){
+    this.name = name;
+  }
+  printMessage(name) {
+    console.log('message!', name);
+  }
+}
 
-export class Resources {
+export class Resources extends CalculateResources {
   constructor(userState, setUserState) {
+    super();
     this.userData = userState;
     this.setUserState = setUserState;
   }
