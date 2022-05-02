@@ -20,6 +20,14 @@ const GameButtons = (props) => {
           </button>
         </div>
         <div>
+          <button
+            className="btn"
+            onClick={() => resourceCalculator.spendResources()}
+          >
+            Decrease Resources
+          </button>
+        </div>
+        <div>
           {userData.resources.minerals.amount >= 0.01 && (
             <button className="btn" onClick={() => startResourceSystem()}>
               {userData.mining.aiMiningUnlocked

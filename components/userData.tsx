@@ -13,7 +13,7 @@ export const userInfo = {
     aiMiners: 0
   }
 };
-export class Resources { 
+export class Resources {
   constructor(userState, setUserState) {
     this.userData = userState;
     this.setUserState = setUserState;
@@ -52,6 +52,16 @@ export class CalculateResources extends Resources {
     this.setUserState = setUserState;
   }
   spendResources() {
-    console.log('resources', this.userData.resources);
+    let { amount } = this.userData.resources.minerals;
+    this.setUserState({
+      ...this.userData,
+      resources: {
+        ...this.userData.resources,
+        minerals: {
+          ...this.userData.resources.minerals,
+          amount: amount - this.userData.resources.minerals.mineralsPerTick
+        }
+      }
+    });
   }
 }

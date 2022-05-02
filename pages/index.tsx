@@ -15,7 +15,7 @@ const Home: NextPage = (props) => {
       </div>
       <div className="row-span-4">
         <div className="grid grid-cols-8 grid-rows-1 h-full">
-          <div>
+          <div className="flex justify-center">
             <Resources userData={userData} />
           </div>
           <div className="col-span-6 text-2xl flex justify-start flex-col">
