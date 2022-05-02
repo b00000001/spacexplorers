@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Resources } from './userData';
+import { Resources, CalculateResources } from './userData';
 
 const GameButtons = (props) => {
   let { userData, setUserData, startResourceSystem } = props;
   let playerResources = new Resources(userData, setUserData);
-  playerResources.printMessage('Joker');
+  let resourceCalculator = new CalculateResources(userData, setUserData);
+
+  resourceCalculator.displayProps();
   return (
     <>
       <div className="gameButtons w-auto h-full flex flex-col">

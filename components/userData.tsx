@@ -13,18 +13,8 @@ export const userInfo = {
     aiMiners: 0
   }
 };
-class CalculateResources { 
-  costructor(name){
-    this.name = name;
-  }
-  printMessage(name) {
-    console.log('message!', name);
-  }
-}
-
-export class Resources extends CalculateResources {
+export class Resources { 
   constructor(userState, setUserState) {
-    super();
     this.userData = userState;
     this.setUserState = setUserState;
   }
@@ -50,7 +40,18 @@ export class Resources extends CalculateResources {
       }
     });
   };
-  displayProps = () => {
-    console.log(this.userData);
-  };
+  displayProps() {
+    console.log('userState:', this.userData);
+  }
+}
+
+export class CalculateResources extends Resources {
+  constructor(userState, setUserState) {
+    super();
+    this.userData = userState;
+    this.setUserState = setUserState;
+  }
+  spendResources() {
+    console.log('resources', this.userData.resources);
+  }
 }
