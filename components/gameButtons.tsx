@@ -10,42 +10,49 @@ const GameButtons = (props) => {
     <>
       <div className="gameButtons w-auto h-full flex flex-col">
         Welcome {userData.userName}!
-        <div>
-          <button
-            className="btn"
-            onClick={() => playerResources.increaseResources()}
-          >
-            Increase Resources
-          </button>
-        </div>
-        <div>
-          {userData.resources.minerals.amount > parseFloat('1.0') ? (
-            <button
-              className="btn"
-              onClick={() => resourceCalculator.spendResources('aiMiner')}
-            >
-              Decrease Resources
-            </button>
-          ) : null}
-        </div>
-        <div>
-          {userData.resources.minerals.amount >= 0.01 && (
-            <button className="btn" onClick={() => startResourceSystem()}>
-              {userData.mining.aiMiningUnlocked
-                ? 'Pause AI Miner'
-                : 'Install AI Miner'}
-            </button>
-          )}
-        </div>
-        <div>
-          {userData.resources.minerals.amount >= 0.2 && (
-            <button
-              className="btn"
-              onClick={() => playerResources.additionalMiner()}
-            >
-              Install Additional Miner
-            </button>
-          )}
+        <div className="border border-2 flex">
+          <div className="buttonsLeft w-full">
+            <div>
+              <button
+                className="btn"
+                onClick={() => playerResources.increaseResources()}
+              >
+                Increase Resources
+              </button>
+            </div>
+            <div>
+              {userData.resources.minerals.amount > parseFloat('1.0') ? (
+                <button
+                  className="btn"
+                  onClick={() => resourceCalculator.spendResources('aiMiner')}
+                >
+                  Decrease Resources
+                </button>
+              ) : null}
+            </div>
+            <div>
+              {userData.resources.minerals.amount >= 0.01 && (
+                <button className="btn" onClick={() => startResourceSystem()}>
+                  {userData.mining.aiMiningUnlocked
+                    ? 'Pause AI Miner'
+                    : 'Install AI Miner'}
+                </button>
+              )}
+            </div>
+            <div>
+              {userData.resources.minerals.amount >= 0.2 && (
+                <button
+                  className="btn"
+                  onClick={() => playerResources.additionalMiner()}
+                >
+                  Install Additional Miner
+                </button>
+              )}
+            </div>
+          </div>
+          <div className="buttonsRight w-full border border-2">
+            <button className="btn">test</button>
+          </div>
         </div>
       </div>
     </>
