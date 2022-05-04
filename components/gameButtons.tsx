@@ -6,7 +6,6 @@ const GameButtons = (props) => {
   let playerResources = new Resources(userData, setUserData);
   let resourceCalculator = new CalculateResources(userData, setUserData);
 
-  resourceCalculator.displayProps();
   return (
     <>
       <div className="gameButtons w-auto h-full flex flex-col">
@@ -20,12 +19,14 @@ const GameButtons = (props) => {
           </button>
         </div>
         <div>
-          <button
-            className="btn"
-            onClick={() => resourceCalculator.spendResources()}
-          >
-            Decrease Resources
-          </button>
+          {userData.resources.minerals.amount > parseFloat('1.0') ? (
+            <button
+              className="btn"
+              onClick={() => resourceCalculator.spendResources('aiMiner')}
+            >
+              Decrease Resources
+            </button>
+          ) : null}
         </div>
         <div>
           {userData.resources.minerals.amount >= 0.01 && (

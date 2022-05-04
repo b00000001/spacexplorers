@@ -13,6 +13,7 @@ export const userInfo = {
     aiMiners: 0
   }
 };
+
 export class Resources {
   constructor(userState, setUserState) {
     this.userData = userState;
@@ -51,15 +52,24 @@ export class CalculateResources extends Resources {
     this.userData = userState;
     this.setUserState = setUserState;
   }
-  spendResources() {
+  spendResources(upgradeType: string) {
     let { amount } = this.userData.resources.minerals;
+    let upgrade;
+    switch (upgradeType) {
+      case 'aiMiner':
+        upgrade = parseFloat('1.0');
+        break;
+      default:
+        throw new Error('Unknown upgrade type');
+        break;
+    }
     this.setUserState({
       ...this.userData,
       resources: {
         ...this.userData.resources,
         minerals: {
           ...this.userData.resources.minerals,
-          amount: amount - this.userData.resources.minerals.mineralsPerTick
+          amount: amount - upgrade
         }
       }
     });
