@@ -16,9 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
             ...userData.resources,
             minerals: {
               ...userData.resources.minerals,
-              amount:
-                userData.resources.minerals.amount +
-                userData.resources.minerals.mineralsPerTick
+              ...(userData.mining.aiMiners > 0 && { amount: userData.resources.minerals.amount + userData.resources.minerals.mineralsPerTick * userData.mining.aiMiners }),
+              ...(userData.mining.aiMiners === 0 && { amount: userData.resources.minerals.amount + userData.resources.minerals.mineralsPerTick })          
+
             }
           }
         });
